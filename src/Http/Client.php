@@ -2,12 +2,12 @@
 namespace Shobi\Weatherapp\Http;
 
 
-use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\Uri;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\CurlHandler;
-use GuzzleHttp\Middleware;
+use GuzzleHttp\Client as GuzzleClient;
 use Psr\Http\Message\RequestInterface;
-use GuzzleHttp\Psr7\Uri;
 
 class Client
 {
@@ -57,8 +57,7 @@ class Client
      */
     public function get(string $uri, array $query = [], array $options = [])
     {
-        $uri = $uri .'?'. http_build_query($query);
-
+        $uri      = $uri .'?'. http_build_query($query);
         $response = $this->http->request('GET', $uri, $options);
 
         return (string) $response->getBody()->getContents();
@@ -77,7 +76,7 @@ class Client
 
         return new GuzzleClient([
             'base_uri' => self::BASE_URL . self::VERSION . '/' . self::ENDPOINT,
-            'handler' => $stack
+            'handler'  => $stack
         ]);
     }
 
