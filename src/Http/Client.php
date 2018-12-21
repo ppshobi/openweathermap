@@ -21,13 +21,6 @@ class Client
      */
     const VERSION = '2.5';
 
-
-    /**
-     * Endpoint
-     */
-
-    const ENDPOINT = 'weather';
-
     /**
      * The HTTP client
      *
@@ -75,7 +68,7 @@ class Client
         $stack = $this->getHandlerStack($token);
 
         return new GuzzleClient([
-            'base_uri' => self::BASE_URL . self::VERSION . '/' . self::ENDPOINT,
+            'base_uri' => self::BASE_URL . self::VERSION . '/',
             'handler'  => $stack
         ]);
     }
