@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+
+<?php
+require __DIR__.'/vendor/autoload.php';
+
+use Shobi\Weatherapp\Http\Client;
+
+$client = new Client('6723df6a02149f85e517ad8d4836c748');
+
+die($client->get('weather', ['q'=>'london']));
