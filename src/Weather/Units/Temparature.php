@@ -15,4 +15,9 @@ class Temparature
     {
         return $this->kelvin - 273.15;
     }
+
+    public function toKelvin()
+    {
+        return $this->kelvin;
+    }
 }
