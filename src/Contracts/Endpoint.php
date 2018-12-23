@@ -6,5 +6,5 @@ use Shobi\Weatherapp\Weather\Weather;
 
 interface Endpoint
 {
-    public function get(): Weather;
+    public function get($location): Weather;
 }

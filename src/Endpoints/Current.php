@@ -2,10 +2,10 @@
 
 namespace Shobi\Weatherapp\Endpoints;
 
+use Exception;
 use Shobi\Weatherapp\Http\Client;
 use Shobi\Weatherapp\Weather\Weather;
 use Shobi\Weatherapp\Contracts\Endpoint;
-
 
 class Current implements Endpoint
 {
@@ -18,8 +18,10 @@ class Current implements Endpoint
         $this->client = $client;
     }
 
-    public function get($location="london") : Weather
+    public function get($location) : Weather
     {
+        $location = $location ?? "london";
+        
         $reponse = json_decode($this->client->get(self::ENDPOINT, ['q' => $location]), true);
         
         $description = $reponse['weather'][0]['description'];
