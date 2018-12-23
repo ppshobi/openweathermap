@@ -2,7 +2,6 @@
 
 namespace Shobi\Weatherapp\Endpoints;
 
-use Exception;
 use Shobi\Weatherapp\Http\Client;
 use Shobi\Weatherapp\Weather\Weather;
 use Shobi\Weatherapp\Contracts\Endpoint;
@@ -13,11 +12,22 @@ class Current implements Endpoint
 
     private $client;
 
+    /**
+     * Current constructor.
+     * @param Client $client
+     */
     public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
+    /**
+     * @param string $location
+     * @return Shobi\Weatherapp\Weather\Weather
+     *
+     * @throws \Exception
+     * fetches the current weather data from the api
+     */
     public function get($location = "london") : Weather
     {
         $reponse  = json_decode($this->client->get(self::ENDPOINT, ['q' => $location]), true);

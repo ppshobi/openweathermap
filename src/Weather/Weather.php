@@ -2,28 +2,47 @@
 
 namespace Shobi\Weatherapp\Weather;
 
-use Shobi\Weatherapp\Weather\Units\Temparature;
+use Shobi\Weatherapp\Weather\Units\Temperature;
 
 
 class Weather
 {
-    private $temparature;
+    /**
+     * @var Shobi\Weatherapp\Weather\Units\Temperature
+     */
+    private $temperature;
 
+    /**
+     * the weather summary
+     * @var string
+     */
     private $summary;
 
+    /**
+     * @var string
+     */
     private $location;
 
 
-    public function __construct(string $summary, string $temparature, string $location)
+    /**
+     * Weather constructor.
+     * @param string $summary
+     * @param string $temperature
+     * @param string $location
+     */
+    public function __construct(string $summary, string $temperature, string $location)
     {
-        $this->temparature = new Temparature($temparature);
+        $this->temperature = new Temperature($temperature);
         $this->location    = $location;        
         $this->summary     = $summary;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
-        return $this->temparature->toDegreeCelsius() 
+        return $this->temperature->toDegreeCelsius()
             . " Degree celsius with " 
             . $this->summary 
             . " in " 

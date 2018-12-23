@@ -5,12 +5,13 @@ require __DIR__.'/vendor/autoload.php';
 
 use Shobi\Weatherapp\Weatherapp;
 
-$app = new Weatherapp();
+$app      = new Weatherapp();
+$location = $argv[1] ?? "london";
 
 try {
-    $weather = $app->current($argv[1] ?? null);
+    $weather = $app->current($location);
 } catch(Exception $e) {
-    die("Uh oh... The location " . $argv[1] . " doesn't seems to be present in our database");
+    die("Uh oh... The location " . $location . " doesn't seems to be present in our database");
 }
 
 die($weather);
