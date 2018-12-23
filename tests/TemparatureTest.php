@@ -13,7 +13,7 @@ class TemparatureTest extends TestCase
         $this->assertEquals(0, $temparature->toDegreeCelsius());
     }
 
-    public function test_it_returns_kelvin_to_kelvin()
+    public function test_it_can_convert_kelvin_to_kelvin()
     {
         $temparature = new Temparature(273.15);
         
