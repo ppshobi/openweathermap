@@ -18,12 +18,10 @@ class Current implements Endpoint
         $this->client = $client;
     }
 
-    public function get($location) : Weather
+    public function get($location = "london") : Weather
     {
-        $location = $location ?? "london";
-        
-        $reponse = json_decode($this->client->get(self::ENDPOINT, ['q' => $location]), true);
-        
+        $reponse  = json_decode($this->client->get(self::ENDPOINT, ['q' => $location]), true);
+                
         $description = $reponse['weather'][0]['description'];
         $temparature = $reponse['main']['temp'];
         $location    = $reponse['name'];
