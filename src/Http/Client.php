@@ -8,8 +8,9 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\Client as GuzzleClient;
 use Psr\Http\Message\RequestInterface;
+use Shobi\Weatherapp\Contracts\Client as ClientContract;
 
-class Client
+class Client implements ClientContract
 {
     /**
      * The API's base URI
@@ -48,7 +49,7 @@ class Client
      *
      * @return string JSON
      */
-    public function get(string $uri, array $query = [], array $options = [])
+    public function get(string $uri, array $query = [], array $options = []) : string
     {
         $uri      = $uri .'?'. http_build_query($query);
         $response = $this->http->request('GET', $uri, $options);
