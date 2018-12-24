@@ -15,9 +15,9 @@ class WeatherApp
     /**
      * WeatherApp constructor.
      */
-    public function __construct()
+    public function __construct(Client $client)
     {
-        $this->client = new Client('6723df6a02149f85e517ad8d4836c748');
+        $this->client = $client;
     }
 
     /**

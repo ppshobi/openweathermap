@@ -4,14 +4,18 @@
 require __DIR__.'/vendor/autoload.php';
 
 use Shobi\Weatherapp\Weatherapp;
+use Shobi\Weatherapp\Http\Client;
+use GuzzleHttp\Exception\ClientException;
 
-$app      = new Weatherapp();
+$app      = new Weatherapp(new Client('6723df6a02149f85e517ad8d4836c748'));
 $location = $argv[1] ?? "london";
 
 try {
     $weather = $app->current($location);
-} catch(Exception $e) {
-    die("Uh oh... The location " . $location . " doesn't seems to be present in our database");
+} catch(ClientException $e) {
+    echo "Uh oh... The location " . $location . " doesn't seems to be present in our database" . PHP_EOL;
+    exit(1);
 }
 
-die($weather);
+echo $weather . PHP_EOL;
+
