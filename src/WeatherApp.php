@@ -23,7 +23,7 @@ class WeatherApp
     /**
      * @param string $location
      * @return Weather\Weather
-     * @throws \Exception
+     * @throws GuzzleHttp\Exception\ClientException
      */
     public function current($location = 'london')
     {
