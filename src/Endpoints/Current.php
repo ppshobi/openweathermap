@@ -25,7 +25,7 @@ class Current implements Endpoint
      * @param string $location
      * @return Shobi\Weatherapp\Weather\Weather
      *
-     * @throws \Exception
+     * @throws GuzzleHttp\Exception\ClientException\ClientException
      * fetches the current weather data from the api
      */
     public function get($location = "london") : Weather
