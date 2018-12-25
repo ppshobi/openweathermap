@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ppshobi/openweathermap.svg?branch=master)](https://travis-ci.org/ppshobi/openweathermap)
+[![Build Status](https://scrutinizer-ci.com/g/ppshobi/openweathermap/badges/build.png?b=master)](https://scrutinizer-ci.com/g/ppshobi/openweathermap/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ppshobi/openweathermap/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ppshobi/openweathermap/?branch=master)
 
 # Summary
