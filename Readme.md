@@ -9,8 +9,11 @@ You need php7+, and composer to install this tool.
  - clone this repository
  - `cd` into the repo
  - `composer install` to install composer dependencies, 
+ - `cp .env.exmaple .env` to create environment file
+ - edit `.env` file to add the api token obtained from openweathermap
  - `chmod u+x weather` this command will give executable permissions to the program
-Boom you are done
+
+:zap: Boom you are done
 
 # Usage
 - `cd` into the repo if you are not already
