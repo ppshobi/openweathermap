@@ -13,3 +13,8 @@ Boom you are done
 - `cd` into the repo if you are not already
 - `./weather bangalore` will display weather information for bangalore the location defaults to *London*.
 
+# Testing
+
+ - run `composer test`
+
+
