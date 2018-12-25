@@ -7,7 +7,10 @@ use Shobi\Weatherapp\Weatherapp;
 use Shobi\Weatherapp\Http\Client;
 use GuzzleHttp\Exception\ClientException;
 
-$client   = new Client('6723df6a02149f85e517ad8d4836c748'); //token can be kept in some configuration file; maybe in next iteration
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
+$client   = new Client(getenv('OPEN_WEATHER_MAP_APP_ID'));
 $app      = new Weatherapp($client);
 $location = $argv[1] ?? "london";
 
