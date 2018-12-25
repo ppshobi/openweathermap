@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/ppshobi/openweathermap.svg?branch=master)](https://travis-ci.org/ppshobi/openweathermap)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ppshobi/openweathermap/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ppshobi/openweathermap/?branch=master)
+
 # Summary
 This is a small cli tool built around the openweatherapi to display the current weather information for a given location. At this point this tool only displays the current weather information.
 
