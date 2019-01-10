@@ -4,7 +4,6 @@ namespace Shobi\Weatherapp\Weather;
 
 use Shobi\Weatherapp\Weather\Units\Temperature;
 
-
 class Weather
 {
     /**
@@ -23,7 +22,6 @@ class Weather
      */
     private $location;
 
-
     /**
      * Weather constructor.
      * @param string $summary
@@ -33,8 +31,36 @@ class Weather
     public function __construct(string $summary, string $temperature, string $location)
     {
         $this->temperature = new Temperature($temperature);
-        $this->location    = $location;        
+        $this->location    = $location;
         $this->summary     = $summary;
+    }
+
+    /**
+     * Returns the Temperature
+     *
+     * @return \Shobi\Weatherapp\Weather\Units\Temperature
+     */
+    public function getTemperature(): Temperature
+    {
+        return $this->temperature;
+    }
+    /**
+     * Returns the weather summary
+     *
+     * @return string
+     */
+    public function getSummary(): string
+    {
+        return $this->summary;
+    }
+    /**
+     * Returns the location
+     *
+     * @return string
+     */
+    public function getLocation(): string
+    {
+        return $this->location;
     }
 
     /**
@@ -43,9 +69,9 @@ class Weather
     public function __toString(): string
     {
         return $this->temperature->toDegreeCelsius()
-            . " Degree celsius with " 
-            . $this->summary 
-            . " in " 
+            . " Degree celsius with "
+            . $this->summary
+            . " in "
             . $this->location;
     }
 }
