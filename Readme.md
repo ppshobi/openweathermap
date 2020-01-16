@@ -17,7 +17,7 @@ You need php7+, and composer to install this tool.
 
 # Usage
 - `cd` into the repo if you are not already
-- `./weather bangalore` will display weather information for bangalore the location defaults to *London*.
+- `./weather bangalore` will display weather information for bangalore. The location defaults to *London*.
 
 # Testing
 
